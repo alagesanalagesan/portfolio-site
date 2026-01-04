@@ -77,7 +77,7 @@ src/
 bash
 Copy code
 # Clone the repository
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/alagesanalagesan/portfolio-site
 
 # Navigate to project
 cd your-repo-name
