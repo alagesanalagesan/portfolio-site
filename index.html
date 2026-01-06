@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Alagesan-Full Stack Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -20,6 +20,12 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            overflow-x: hidden;
+            width: 100%;
         }
 
         body {
@@ -27,6 +33,8 @@
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
+            width: 100%;
+            position: relative;
         }
 
         /* Header Styles */
@@ -48,9 +56,10 @@
         }
 
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 15px;
         }
 
         .header-container {
@@ -60,10 +69,11 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: white;
             text-decoration: none;
+            z-index: 1001;
         }
 
         .logo span {
@@ -110,6 +120,8 @@
             display: none;
             cursor: pointer;
             font-size: 1.5rem;
+            z-index: 1001;
+            color: white;
         }
 
         /* Hero Section */
@@ -121,6 +133,7 @@
             color: white;
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .hero::before {
@@ -139,14 +152,15 @@
             position: relative;
             z-index: 1;
             width: 100%;
+            padding: 0 15px;
         }
 
         .hero-text {
-            max-width: 600px;
+            max-width: 100%;
         }
 
         .hero-text h1 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             line-height: 1.2;
         }
@@ -293,7 +307,8 @@
 
         /* About Section */
         .section {
-            padding: 5rem 0;
+            padding: 4rem 0;
+            width: 100%;
         }
 
         .section-title {
@@ -303,9 +318,10 @@
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--dark-color);
             display: inline-block;
+            padding: 0 15px;
         }
 
         .section-title h2::after {
@@ -323,10 +339,12 @@
             display: flex;
             align-items: center;
             gap: 3rem;
+            flex-wrap: wrap;
         }
 
         .about-img {
             flex: 1;
+            min-width: 300px;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -351,10 +369,11 @@
 
         .about-text {
             flex: 1;
+            min-width: 300px;
         }
 
         .about-text h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
             color: var(--dark-color);
         }
@@ -371,11 +390,22 @@
         .info-item {
             display: flex;
             margin-bottom: 1rem;
+            align-items: center;
         }
 
         .info-item i {
             margin-right: 1rem;
             color: var(--primary-color);
+            min-width: 20px;
+        }
+
+        .info-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .info-item a:hover {
+            text-decoration: underline;
         }
 
         /* Skills Section */
@@ -385,13 +415,13 @@
 
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
         .skill-item {
             background-color: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all var(--animation-duration) ease;
@@ -407,19 +437,20 @@
         }
 
         .skill-item i {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--primary-color);
             margin-bottom: 1rem;
         }
 
         .skill-item h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
             color: var(--dark-color);
         }
 
         .skill-item p {
             color: #666;
+            font-size: 0.95rem;
         }
 
         .skill-badge {
@@ -432,10 +463,10 @@
             margin: 0.3rem;
         }
 
-        /* Experience Section */
+        /* Experience Section - UPDATED TIMELINE */
         .timeline {
             position: relative;
-            max-width: 800px;
+            max-width: 100%;
             margin: 0 auto;
             padding: 2rem 0;
         }
@@ -443,16 +474,17 @@
         .timeline::before {
             content: '';
             position: absolute;
-            width: 2px;
-            background-color: var(--primary-color);
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary-color), #9b59b6, #e74c3c);
             top: 0;
             bottom: 0;
             left: 50%;
-            margin-left: -1px;
+            margin-left: -2px;
+            border-radius: 2px;
         }
 
         .timeline-item {
-            padding: 1rem 2rem;
+            padding: 1rem;
             position: relative;
             width: 50%;
             opacity: 0;
@@ -479,43 +511,175 @@
             width: 20px;
             height: 20px;
             background-color: white;
-            border: 3px solid var(--primary-color);
+            border: 4px solid var(--primary-color);
             border-radius: 50%;
             top: 30px;
             right: -10px;
+            z-index: 1;
+            transition: all 0.3s ease;
         }
 
         .timeline-item:nth-child(even)::after {
             left: -10px;
         }
 
+        /* Special styling for 2026 item */
+        .timeline-item.future::after {
+            background-color: #e74c3c;
+            border-color: #e74c3c;
+            box-shadow: 0 0 15px rgba(231, 76, 60, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        .timeline-item.future .timeline-content {
+            background: linear-gradient(135deg, #e74c3c, #ff6b6b);
+            color: white;
+            border-left: 5px solid #ff9f43;
+        }
+
+        .timeline-item.future .timeline-content h3,
+        .timeline-item.future .timeline-content h4,
+        .timeline-item.future .timeline-content p,
+        .timeline-item.future .timeline-date {
+            color: white;
+        }
+
+        .timeline-item.future .timeline-date {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+            }
+        }
+
         .timeline-content {
             padding: 1.5rem;
             background-color: white;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), #9b59b6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .timeline-content:hover::before {
+            opacity: 1;
         }
 
         .timeline-content h3 {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
             color: var(--dark-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .timeline-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .timeline-item.future .timeline-content h3::after {
+            background-color: white;
         }
 
         .timeline-content h4 {
             font-size: 1rem;
             color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
         }
 
         .timeline-content p {
             color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         .timeline-date {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--dark-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .timeline-date i {
+            color: var(--primary-color);
+        }
+
+        .timeline-item.future .timeline-date i {
+            color: white;
+        }
+
+        /* Add icons to timeline items */
+        .timeline-icon {
+            position: absolute;
+            top: 25px;
+            right: -40px;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .timeline-item:nth-child(even) .timeline-icon {
+            left: -40px;
+            right: auto;
+        }
+
+        .timeline-item.future .timeline-icon {
+            background-color: #e74c3c;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         /* Certifications Section */
@@ -524,15 +688,15 @@
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--dark-color);
         }
 
         .cert-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 0 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 0 10px;
         }
 
         .cert-card {
@@ -557,7 +721,7 @@
         }
 
         .cert-img {
-            height: 200px;
+            height: 180px;
             overflow: hidden;
             position: relative;
         }
@@ -593,12 +757,12 @@
         }
 
         .cert-content {
-            padding: 1.5rem;
+            padding: 1.2rem;
             position: relative;
         }
 
         .cert-content h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: var(--dark-color);
         }
@@ -606,7 +770,7 @@
         .cert-content p {
             color: #666;
             margin-bottom: 1rem;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .cert-date {
@@ -636,6 +800,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-top: 0.5rem;
         }
 
         .cert-btn {
@@ -645,7 +810,7 @@
             color: white;
             border-radius: 5px;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
         }
 
@@ -684,11 +849,11 @@
 
         .modal-content {
             background-color: white;
-            margin: auto;
+            margin: 20px;
             padding: 20px;
             border-radius: 10px;
             max-width: 800px;
-            width: 90%;
+            width: calc(100% - 40px);
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
@@ -709,6 +874,7 @@
             font-weight: bold;
             cursor: pointer;
             transition: color 0.3s ease;
+            z-index: 1002;
         }
 
         .close-modal:hover {
@@ -725,20 +891,23 @@
         .modal-title {
             margin-top: 1rem;
             color: var(--dark-color);
+            font-size: 1.2rem;
         }
 
         /* Contact Section */
         .contact-container {
             display: flex;
-            gap: 3rem;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
         .contact-info {
             flex: 1;
+            min-width: 300px;
         }
 
         .contact-info h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
             color: var(--dark-color);
         }
@@ -769,22 +938,29 @@
             align-items: center;
             margin-right: 1rem;
             font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
-        .contact-item span {
-            color: #666;
+        .contact-item span a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .contact-item span a:hover {
+            text-decoration: underline;
         }
 
         .contact-form {
             flex: 1;
+            min-width: 300px;
             background-color: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .form-group label {
@@ -812,7 +988,7 @@
         }
 
         .form-group textarea {
-            min-height: 150px;
+            min-height: 120px;
             resize: vertical;
         }
 
@@ -865,6 +1041,7 @@
             color: white;
             padding: 2rem 0;
             text-align: center;
+            width: 100%;
         }
 
         .footer-content {
@@ -874,7 +1051,7 @@
         }
 
         .footer-logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
@@ -885,8 +1062,10 @@
 
         .footer-links {
             display: flex;
-            gap: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
             margin-bottom: 1.5rem;
+            justify-content: center;
         }
 
         .footer-links a {
@@ -907,7 +1086,7 @@
 
         .footer-social a {
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             transition: all var(--animation-duration) ease;
         }
 
@@ -924,17 +1103,17 @@
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 45px;
+            height: 45px;
             background-color: var(--primary-color);
             color: white;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
@@ -1015,7 +1194,8 @@
 
             .about-img {
                 margin-bottom: 2rem;
-                max-width: 500px;
+                max-width: 400px;
+                width: 100%;
             }
 
             .contact-container {
@@ -1028,8 +1208,8 @@
 
             .timeline-item {
                 width: 100%;
-                padding-left: 70px;
-                padding-right: 0;
+                padding-left: 60px;
+                padding-right: 15px;
             }
 
             .timeline-item:nth-child(even) {
@@ -1037,7 +1217,13 @@
             }
 
             .timeline-item::after {
-                left: 21px;
+                left: 22px;
+            }
+
+            .timeline-icon {
+                left: 22px !important;
+                right: auto !important;
+                transform: translateX(-50%);
             }
         }
 
@@ -1047,15 +1233,18 @@
             }
 
             nav {
-                position: absolute;
-                top: 100%;
+                position: fixed;
+                top: 0;
                 left: 0;
                 width: 100%;
+                height: 100vh;
                 background-color: var(--dark-color);
-                padding: 1rem;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                padding: 80px 20px 20px;
+                box-shadow: none;
                 clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
                 transition: all var(--animation-duration) ease;
+                overflow-y: auto;
+                z-index: 1000;
             }
 
             nav.active {
@@ -1064,23 +1253,33 @@
 
             nav ul {
                 flex-direction: column;
+                align-items: center;
             }
 
             nav ul li {
                 margin: 0;
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            nav ul li a {
+                font-size: 1.2rem;
             }
 
             .hero-text h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
             }
 
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .cert-grid {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1rem;
             }
 
             .button-group {
@@ -1091,12 +1290,34 @@
             .new-site-btn {
                 margin-left: 0;
                 margin-top: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .cta-download {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero-text .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .social-icons {
+                justify-content: center;
             }
         }
 
         @media (max-width: 576px) {
+            .hero {
+                height: auto;
+                min-height: 100vh;
+                padding: 80px 0 40px;
+            }
+            
             .hero-text h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .hero-text p {
@@ -1104,9 +1325,13 @@
             }
 
             .section {
-                padding: 3rem 0;
+                padding: 2.5rem 0;
             }
 
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
             .cert-content h3 {
                 font-size: 1.1rem;
             }
@@ -1114,10 +1339,121 @@
             .cert-content p {
                 font-size: 0.8rem;
             }
+            
+            .about-text h3 {
+                font-size: 1.3rem;
+            }
+            
+            .about-text p {
+                font-size: 0.95rem;
+            }
+            
+            .skill-item h3 {
+                font-size: 1.2rem;
+            }
+            
+            .skill-item p {
+                font-size: 0.9rem;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .timeline-content h4 {
+                font-size: 0.9rem;
+            }
+            
+            .timeline-content p {
+                font-size: 0.85rem;
+            }
+            
+            .contact-info h3 {
+                font-size: 1.3rem;
+            }
+            
+            .contact-info p {
+                font-size: 0.95rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .header-container {
+                padding: 0 15px;
+            }
+            
+            .hero-content {
+                padding: 0 15px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            
+            .footer-links a {
+                display: block;
+            }
+            
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero-text h1 {
+                font-size: 1.6rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.4rem;
+            }
+            
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-img, .about-text {
+                min-width: 100%;
+            }
+            
+            .contact-info, .contact-form {
+                min-width: 100%;
+            }
+            
+            .cert-img {
+                height: 150px;
+            }
+            
+            .logo {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Fix for iOS Safari */
+        @supports (-webkit-touch-callout: none) {
+            .hero {
+                height: -webkit-fill-available;
+            }
+        }
+
+        /* Prevent horizontal scroll */
+        .overflow-x-hidden {
+            overflow-x: hidden;
         }
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
@@ -1185,7 +1521,7 @@
             </div>
             <div class="about-content">
                 <div class="about-img fade-in">
-                  <img src="/src/alagu4.png" alt="Alagesan Alagu">
+                  <img src="./src/alagu4.png" alt="Alagesan Alagu">
                 </div>
                 <div class="about-text fade-in delay-1">
                     <h3>Full Stack Developer from dindigul</h3>
@@ -1198,17 +1534,15 @@
                         </div>
                         <div class="info-item">
                             <i class="fas fa-envelope"></i>
-                            <span><strong>Email:</strong><a href="mailto:alagesanalagu178@gmail.com">alagesanalagu178@gmail.com</a>
-                            </span>
+                            <span><strong>Email:</strong> <a href="mailto:alagesanalagu178@gmail.com">alagesanalagu178@gmail.com</a></span>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-phone"></i>
-                            <span><strong>Phone:</strong><a href="tel:+917904321890">+91 79043 21890</a>
-                            </span>
+                            <span><strong>Phone:</strong> <a href="tel:+917904321890">+91 79043 21890</a></span>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span><strong>Location:</strong>Dindigul,Tamil nadu</span>
+                            <span><strong>Location:</strong> Dindigul, Tamil nadu</span>
                         </div>
                     </div>
                 </div>
@@ -1287,27 +1621,62 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience Section - UPDATED TIMELINE -->
     <section class="section" id="experience">
         <div class="container">
             <div class="section-title">
-                <h2>Work Experience</h2>
+                <h2>My Journey</h2>
             </div>
             <div class="timeline">
+                <!-- Item 1: 2023 -->
                 <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2025 - Present</div>
-                        <h3>Full Stack Developer 3 years experience</h3>
-                        <h4>Growthin IT Solutions</h4>
-                        <p>Developing and maintaining full stack applications using MERN stack and Java technologies. Implementing AI solutions and optimizing database performance.</p>
+                        <div class="timeline-date"><i class="far fa-calendar"></i> 2023</div>
+                        <h3>Starting the Programming Journey</h3>
+                        <h4>Beginning of Tech Career</h4>
+                        <p>Started my journey in programming with foundational courses in JavaScript, Java, and web development. Built first projects and completed multiple internships to gain hands-on experience.</p>
                     </div>
                 </div>
+                
+                <!-- Item 2: 2024 -->
                 <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2023 - 2024</div>
-                        <h3>Junior Full Stack Developer</h3>
-                        <h4>Tech Solutions Inc.</h4>
-                        <p>Worked on both frontend and backend development, gaining experience in React, Node.js, and Java Spring Boot frameworks.</p>
+                        <div class="timeline-date"><i class="far fa-calendar"></i> 2024</div>
+                        <h3>Boosting My Profile</h3>
+                        <h4>Skill Enhancement & Projects</h4>
+                        <p>Enhanced technical skills by working on real-world projects. Developed full-stack applications, contributed to open-source projects, and built a strong portfolio showcasing MERN stack expertise.</p>
+                    </div>
+                </div>
+                
+                <!-- Item 3: 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="far fa-calendar"></i> 2025</div>
+                        <h3>Upscaling Career with MERN Stack</h3>
+                        <h4>Growthin IT Solutions</h4>
+                        <p>Currently working as a Full Stack Developer, specializing in MERN stack and Java technologies. Building scalable applications, implementing AI solutions, and mentoring junior developers.</p>
+                    </div>
+                </div>
+                
+                <!-- Item 4: 2026 - Future Role (Special Styling) -->
+                <div class="timeline-item future">
+                    <div class="timeline-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="far fa-calendar"></i> 2026</div>
+                        <h3>Target: Freelance & ZOHO 20LPA Package</h3>
+                        <h4>Future Goals & Aspirations</h4>
+                        <p>Focusing on freelance opportunities and targeting a 20 LPA package at ZOHO. Expanding expertise in cloud technologies, microservices architecture, and leading large-scale projects.</p>
                     </div>
                 </div>
             </div>
@@ -1520,8 +1889,7 @@
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <span><a href="tel:+917904321890">+91 79043 21890</a>
-                            </span>
+                            <span><a href="tel:+917904321890">+91 79043 21890</a></span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
@@ -1607,6 +1975,15 @@
 
             menuToggle.addEventListener('click', function() {
                 nav.classList.toggle('active');
+                // Change icon based on menu state
+                const icon = this.querySelector('i');
+                if (nav.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             });
 
             // Close mobile menu when clicking on a nav link
@@ -1614,6 +1991,8 @@
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
                     nav.classList.remove('active');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
                 });
             });
 
@@ -1908,6 +2287,15 @@
                     }
                 });
             }
+
+            // Fix for iOS viewport height issue
+            function setViewportHeight() {
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+            
+            setViewportHeight();
+            window.addEventListener('resize', setViewportHeight);
         });
     </script>
 </body>
