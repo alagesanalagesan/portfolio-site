@@ -1,7 +1,7 @@
 # 🌐 Alagesan – Full Stack Developer & Founder
 
 Welcome to my personal portfolio website.  
-This project showcases my skills, projects, and professional journey as a **Full Stack Developer**, **App Developer**, and **Founder** of **GROW THINK IT SOLUTIONS**.
+This project showcases my skills, projects, and professional journey as a **Full Stack Developer**, **App Developer**, and **Founder** of ****.
 
 ---
 
