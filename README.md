@@ -5,7 +5,6 @@ This project showcases my skills, projects, and professional journey as a **Full
 
 ---
 
-
 ## 🚀 Live Demo
 🔗 https://alagesan.netlify.app/
 
