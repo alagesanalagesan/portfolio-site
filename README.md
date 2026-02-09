@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio website.  
 This project showcases my skills, projects, and professional journey as a **Full Stack Developer**, **App Developer**, and **Founder** of **techvirus.in**.
-is it is
+is i
 ---
 
 ## 🚀 Live Demo
